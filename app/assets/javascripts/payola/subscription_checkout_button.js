@@ -21,6 +21,7 @@ var PayolaSubscriptionCheckout = {
         } else {
           // Open a Stripe Checkout to collect the customer's billing details
           var handler = StripeCheckout.configure({
+              locale: "zh-CN",
               key: options.publishable_key,
               image: options.plan_image_path,
               token: function(token) { PayolaSubscriptionCheckout.tokenHandler(token, options); },

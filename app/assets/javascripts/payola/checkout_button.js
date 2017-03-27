@@ -17,7 +17,7 @@ var PayolaCheckout = {
           // Open a Stripe Checkout to collect the customer's billing details
           var handler = StripeCheckout.configure({
               key: options.publishable_key,
-              locale: "zh-CN",
+              locale: $("#site_locale").val() || "auto",
               image: options.product_image_path,
               token: function(token) { PayolaCheckout.tokenHandler(token, options); },
               name: options.name,
